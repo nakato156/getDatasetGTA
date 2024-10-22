@@ -27,6 +27,7 @@ def take_screenshot():
     
     # Tomar la captura y guardarla
     screenshot = ImageGrab.grab()
+    screenshot.resize((64, 36))
     try:
         screenshot.save(screenshot_path, "JPEG", quality=70)
         print(f"Screenshot guardada en {screenshot_path}")
@@ -63,6 +64,8 @@ def on_release(key):
             pressed_keys.remove(key.char)
         elif str(key) in pressed_keys:
             pressed_keys.remove(str(key))
+        elif key.name in pressed_keys:
+            pressed_keys.remove(key.name)
     except KeyError:
         pass
 
