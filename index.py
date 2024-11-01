@@ -27,7 +27,7 @@ def take_screenshot():
     
     # Tomar la captura y guardarla
     screenshot = ImageGrab.grab()
-    screenshot.resize((64, 36))
+    screenshot.resize((256, 144))
     try:
         screenshot.save(screenshot_path, "JPEG", quality=70)
         print(f"Screenshot guardada en {screenshot_path}")
